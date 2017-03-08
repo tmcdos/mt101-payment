@@ -1,0 +1,56 @@
+		<tr>
+			<td><table cellspacing="0" cellpadding="0">
+				<tr>
+					<td>&nbsp;</td>
+					<td width="1000pt"><table width="95%" align="center" class="footer" cellspacing="2" cellpadding="2">
+						<tr>
+							<td bgcolor="#70A366" align="right"><b>(c) 2011 by IVO GELOV</b>&nbsp;&nbsp;&nbsp;</td>
+						</tr>
+					</table></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table></td>
+		</tr>
+<input type="hidden" name="stamp" value='{LOGOUT}'>
+<script language="Javascript" type="text/javascript">
+	function getEl(idVal) 
+	{
+	  if (document.getElementById != null) return document.getElementById(idVal);
+	  if (document.all != null) return document.all[idVal];
+		if (document.layers) return document.layers[idVal];
+		return null;
+	}
+  function Delay()
+  {
+    var p = getEl('timeout');
+    if(p)
+    {
+	    d = new Date();
+	    temp = krai - d.getTime();
+	    if(temp<10)
+	    {
+	      vreme = '0 sec';
+	      clearInterval(mine);
+	      window.location='{PREP}/signout.php?timeout=1';
+	    }
+	    else
+	    {
+	      temp = temp / 1000;
+	  		s = Math.floor(temp % 60);
+	  		n = Math.floor((temp - s)/60);
+	      if(n>0) vreme = n + ' min ';
+	        else vreme = '';
+	      if(s<10 && n>0) vreme = vreme + '0' + s + ' sec';
+	        else vreme = vreme + s + ' sec';
+	    }
+	    p.innerHTML = vreme;
+	  }
+  }
+  {
+    var d = new Date();
+	  if(document.forms[0].stamp && parseInt(document.forms[0].stamp.value)>0)
+	    krai = d.getTime() + 1000 * parseInt(document.forms[0].stamp.value);
+	  else krai = d.getTime() + 1000 * 3600;
+    var mine = setInterval('Delay()',1000);
+  }
+</script>

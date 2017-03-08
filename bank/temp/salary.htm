@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<Title>Salaries</title>
+<meta http-equiv="Content-type" content="text/html;charset=windows-1251">
+<link rel="stylesheet" type="text/css" href="{PREP}/skin/normal.css">
+</head>
+<body topmargin="3" leftmargin="3" rightmargin="3" bottommargin="3">
+<form name="admin" action="{PREP}/salary.php" method="POST">
+	<table align="center" width="100%" height="100%" cellspacing="0" cellpadding="0">
+		{HEADER}
+    <tr>
+      <td align="center" height="100%"><table width="95%" height="100%" cellspacing="0" cellpadding="0">
+				<tr><td style="font-size:4pt">&nbsp;</td></tr>
+				<tr height="100%">
+		      <td width="100%" valign="top"><table align="center" cellspacing="2" cellpadding="2">
+		      	<tr>
+		      		<td>
+		      		  Month:&nbsp;<select class="combo" name="mesec" size="1" onChange="javascript:this.form.submit();">
+  								<option value="0">{MESEC}</option>
+  							</select>&nbsp;
+		      		  Company:&nbsp;<select class="combo" name="firma" size="1" onChange="javascript:this.form.submit();">
+  								<option value="0">{FIRMA}</option>
+  							</select>
+							</td>
+		      	</tr>
+						<tr valign="top">
+							<td align="center"><table class="list_1" cellspacing="0" cellpadding="3">
+								<tr align="center">
+									<td colspan="2">
+									  <input type="submit" class="button3" name="cmdFile" value="Export to Raiffaisen" {EN_FILE}>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									  <input type="submit" class="button3" name="cmdUBB" value="Export to UBB" {EN_FILE}>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									  <input type="submit" class="button3" name="cmdUni" value="Export to UniCredit" {EN_FILE}>
+									</td>
+									<td colspan="3">
+									  <input type="submit" class="button3" name="cmdSave" value="SAVE">
+									</td>
+								</tr>
+								<tr align="center" bgcolor="#00E099">
+									<td>No</td>
+									<td>Employee</td>
+									<td>Salary</td>
+									<td>Last change on</td>
+									<td>Last change by</td>
+								</tr>
+								<tr><td>{ITEM_1}</td></tr>
+								<tr align="center">
+									<td colspan="2">
+									  <input type="submit" class="button3" name="cmdFile" value="Export to Raiffaisen" {EN_FILE}>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									  <input type="submit" class="button3" name="cmdUBB" value="Export to UBB" {EN_FILE}>
+									  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									  <input type="submit" class="button3" name="cmdUni" value="Export to UniCredit" {EN_FILE}>
+									</td>
+									<td align="right">{TOTAL}</td>
+									<td colspan="2">
+									  <input type="submit" class="button3" name="cmdSave" value="SAVE">
+									</td>
+								</tr>
+							</table></td>
+						</tr>
+					</table></td>
+				</tr>
+				<tr><td style="font-size:4pt">&nbsp;</td></tr>
+			</table></td>
+		</tr>
+  {FOOTER}
+</table>
+<script language="Javascript" type="text/javascript">
+  <!--{ERROR}-->
+</script>
+</form>
+</body>
+</html>
